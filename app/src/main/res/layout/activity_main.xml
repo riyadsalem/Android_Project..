@@ -29,7 +29,7 @@
         android:text="Things ToDo" />
 
     <TextView
-        android:id="@+id/txtNext"
+        android:id="@+id/txtNextToSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

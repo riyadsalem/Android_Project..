@@ -25,7 +25,7 @@
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/txtName"
+        android:id="@+id/txtNameSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtCreatePtoToDo"
@@ -42,10 +42,10 @@
         android:background="#8357DC" />
 
     <EditText
-        android:id="@+id/txtPass"
+        android:id="@+id/txtPassSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtName"
+        android:layout_below="@id/txtNameSignUp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:paddingLeft="26dp"
@@ -59,10 +59,10 @@
         android:background="#8357DC"/>
 
     <EditText
-        android:id="@+id/txtEmail"
+        android:id="@+id/txtEmailSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtPass"
+        android:layout_below="@id/txtPassSignUp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:paddingLeft="26dp"
@@ -76,10 +76,10 @@
         android:textSize="14dp" />
 
     <TextView
-        android:id="@+id/doSignup"
+        android:id="@+id/doSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtEmail"
+        android:layout_below="@id/txtEmailSignUp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
@@ -95,10 +95,10 @@
 
 
     <TextView
-        android:id="@+id/txtAlreadyhAcc"
+        android:id="@+id/txtAlreadyHAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/doSignup"
+        android:layout_below="@+id/doSignUp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
         android:text="Already have an account?"
@@ -108,10 +108,10 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/txtLogin"
+        android:id="@+id/txtNextToLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAlreadyhAcc"
+        android:layout_below="@+id/txtAlreadyHAcc"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
         android:text="Log in"
@@ -120,6 +120,6 @@
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         tools:ignore="HardcodedText"
-        android:onClick="toLonInActivity"/>
+        android:onClick="toNextToLogIn"/>
 
 </RelativeLayout>
