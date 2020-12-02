@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:paddingLeft="39dp"
+    android:paddingRight="38dp"
+    android:paddingTop="66dp"
+    tools:context=".SignUp">
+
+
+    <TextView
+        android:id="@+id/txtCreatePtoToDo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+        android:text="Create profile to\n start your first\n  ToDo List"
+        android:maxLines="3"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtCreatePtoToDo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:paddingLeft="26dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="14dp"
+        android:hint="Your name"
+        android:textColorHint="#FFFFFF"
+        android:inputType="text"
+        android:textSize="14dp"
+        android:maxLines="1"
+        android:background="#8357DC" />
+
+    <EditText
+        android:id="@+id/txtPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:paddingLeft="26dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="14dp"
+        android:hint="Password"
+        android:textColorHint="#FFFFFF"
+        android:inputType="textPassword"
+        android:textSize="14dp"
+        android:maxLines="1"
+        android:background="#8357DC"/>
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:paddingLeft="26dp"
+        android:paddingBottom="18dp"
+        android:paddingTop="12dp"
+        android:hint="Your email address"
+        android:textColorHint="#FFFFFF"
+        android:background="#8357DC"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/doSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:paddingBottom="14dp"
+        android:paddingTop="17dp"
+        android:text="Create your profile"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:background="@drawable/txt_btn_to_page"
+        android:textSize="14dp"
+        />
+
+
+    <TextView
+        android:id="@+id/txtAlreadyhAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doSignup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:text="Already have an account?"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textColor="#AB95E6"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/txtLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAlreadyhAcc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Log in"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        tools:ignore="HardcodedText"
+        android:onClick="toLonInActivity"/>
+
+</RelativeLayout>
