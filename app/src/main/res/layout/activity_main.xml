@@ -37,9 +37,9 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="48dp"
         android:text="@string/txtNext"
-        android:onClick="toNextSignUpActivity"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:onClick="TOLOGIN"
         />
 </RelativeLayout>

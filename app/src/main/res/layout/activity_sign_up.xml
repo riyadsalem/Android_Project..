@@ -25,7 +25,7 @@
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/txtNameSignUp"
+        android:id="@+id/edtNameSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtCreatePtoToDo"
@@ -42,10 +42,10 @@
         android:background="#8357DC" />
 
     <EditText
-        android:id="@+id/txtPassSignUp"
+        android:id="@+id/edtPassSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtNameSignUp"
+        android:layout_below="@id/edtNameSignUp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:paddingLeft="26dp"
@@ -59,10 +59,10 @@
         android:background="#8357DC"/>
 
     <EditText
-        android:id="@+id/txtEmailSignUp"
+        android:id="@+id/edtEmailSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtPassSignUp"
+        android:layout_below="@id/edtPassSignUp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:paddingLeft="26dp"
@@ -79,7 +79,7 @@
         android:id="@+id/doSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtEmailSignUp"
+        android:layout_below="@id/edtEmailSignUp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
@@ -91,6 +91,7 @@
         android:textAlignment="center"
         android:background="@drawable/txt_btn_to_page"
         android:textSize="14dp"
+        android:onClick="DoSignUp"
         />
 
 
@@ -108,7 +109,7 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/txtNextToLogIn"
+        android:id="@+id/goToLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtAlreadyHAcc"
@@ -120,6 +121,6 @@
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         tools:ignore="HardcodedText"
-        android:onClick="toNextToLogIn"/>
+        android:onClick="GoToLogIN"/>
 
 </RelativeLayout>

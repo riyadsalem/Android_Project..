@@ -25,7 +25,7 @@
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/txtNameLogin"
+        android:id="@+id/edtEmailLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtWelcomeBc"
@@ -42,10 +42,10 @@
         android:background="#8357DC" />
 
     <EditText
-        android:id="@+id/txtPassLogin"
+        android:id="@+id/edtPassLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtNameLogin"
+        android:layout_below="@id/edtEmailLogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:paddingLeft="26dp"
@@ -62,7 +62,7 @@
         android:id="@+id/txtForgotYPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtPassLogin"
+        android:layout_below="@+id/edtPassLogin"
         android:layout_alignParentRight="true"
         android:layout_marginTop="8dp"
         android:text="Forgot your password?"
@@ -89,6 +89,7 @@
         android:textAlignment="center"
         android:background="@drawable/txt_btn_to_page"
         android:textSize="14dp"
+        android:onClick="DoLogIN"
         />
 
 
@@ -106,7 +107,7 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/txtBackToSignUp"
+        android:id="@+id/goToSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtDNotAcc"
@@ -117,7 +118,7 @@
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         tools:ignore="HardcodedText,OnClick"
-        android:onClick="toBackToSignUp"/>
+        android:onClick="GoToSignUp"/>
 
 
 </RelativeLayout>
