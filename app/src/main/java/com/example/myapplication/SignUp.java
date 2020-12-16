@@ -80,7 +80,7 @@ public class SignUp extends AppCompatActivity {
                 if (task.isSuccessful()){
                     progressDialog.hide();
                     Toast.makeText(SignUp.this , "Successfully signUp", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), Lists.class);
                     startActivity(intent);
 
                 }else {

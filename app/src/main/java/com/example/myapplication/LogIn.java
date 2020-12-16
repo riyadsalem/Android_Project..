@@ -67,7 +67,7 @@ public class LogIn extends AppCompatActivity {
                 if (task.isSuccessful()){
                     progressDialog.hide();
                     Toast.makeText(LogIn.this , "Successfully loggedIn", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), Lists.class);
                     startActivity(intent);
 
                 }else {
