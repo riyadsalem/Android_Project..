@@ -20,11 +20,15 @@ public class Tasks extends AppCompatActivity {
     }
 
     public void GoToSearch(View view) {
+        Intent intent = new Intent(getApplicationContext(), Search.class);
+        startActivity(intent);
     }
 
     public void DeleteTask(View view) {
     }
 
     public void CreateNewTask(View view) {
+        Intent intent = new Intent(getApplicationContext(), TaskDetails.class);
+        startActivity(intent);
     }
 }

@@ -35,7 +35,7 @@
 
 
     <TextView
-        android:id="@+id/txtGoPagShTs"
+        android:id="@+id/txtGoPagSrhTs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -119,4 +119,5 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="40dp"
        />
+
 </RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/radioSrh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/listNameSrh"
+            android:padding="10dp"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/circularborders"
+            android:text="Meeting with client"
+            android:textSize="12sp"
+
+            />
+
+        <TextView
+            android:id="@+id/listNameSrh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/radioSrh"
+            android:layout_alignBottom="@+id/radioSrh"
+            android:textAlignment="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="16dp"
+            android:textSize="12sp"
+            android:background="@drawable/circularborders"
+            android:text="Home" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+

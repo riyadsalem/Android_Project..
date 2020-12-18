@@ -11,9 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Tasks"></activity>
-        <activity android:name=".Lists" >
+        <activity android:name=".TaskDetails">
         </activity>
+        <activity android:name=".Search" />
+        <activity android:name=".Tasks" />
+        <activity android:name=".Lists" />
         <activity android:name=".LogIn" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">
