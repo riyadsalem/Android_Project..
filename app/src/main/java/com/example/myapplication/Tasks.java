@@ -28,7 +28,7 @@ public class Tasks extends AppCompatActivity {
     }
 
     public void CreateNewTask(View view) {
-        Intent intent = new Intent(getApplicationContext(), TaskDetails.class);
+        Intent intent = new Intent(getApplicationContext(), AddTask.class);
         startActivity(intent);
     }
 }

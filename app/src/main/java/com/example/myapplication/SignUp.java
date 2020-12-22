@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 @SuppressWarnings("ALL")
@@ -40,6 +41,13 @@ public class SignUp extends AppCompatActivity {
         pass = findViewById(R.id.edtPassSignUp);
 
         firAuth = FirebaseAuth.getInstance();
+
+              FirebaseUser user = firAuth.getCurrentUser();
+      if ( user !=null)
+       {
+           Intent intent = new Intent(SignUp.this , Lists.class);
+           startActivity(intent);
+       }
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please Wait... ");
