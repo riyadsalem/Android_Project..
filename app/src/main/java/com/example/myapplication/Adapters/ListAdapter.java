@@ -10,48 +10,55 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.model.List;
+import com.example.myapplication.model.ListItemRV;
 
 import java.util.ArrayList;
 
-public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListVh> {
     private Context context;
-    private ArrayList<List> arrList;
+    private ArrayList<ListItemRV> lists = null;
 
-    public ListAdapter(Context context, ArrayList<List> arrList) {
+    public ListAdapter(Context context, ArrayList<ListItemRV> lists) {
         this.context = context;
-        this.arrList = arrList;
-
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtNewList;
-        public ViewHolder(@NonNull View view, Context c) {
-            super(view);
-            txtNewList = itemView.findViewById(R.id.txtNewList);
-        }
-    }
-
-
-
-
-    @NonNull
-    @Override
-    public ListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listsviewcall, parent, false);
-        return new ViewHolder(view, context);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        List list = arrList.get(position);
-        holder.txtNewList.setText(list.getListName());
+        this.lists = lists;
     }
 
     @Override
     public int getItemCount() {
-        return arrList.size();
+        return lists.size();
     }
+
+
+    public class ListVh extends RecyclerView.ViewHolder {
+        TextView NewList;
+
+        public ListVh(@NonNull View view) {
+            super(view);
+            NewList = itemView.findViewById(R.id.txtNewList);
+        }
+
+        public void setData(final ListItemRV list) {
+            NewList.setText(list.getNewList());
+        }
+
+    }
+
+
+    @NonNull
+    @Override
+    public ListVh onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.listsviewcall, parent, false);
+        return new ListVh(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ListVh holder, int position) {
+        holder.setData(lists.get(position));
+        ListItemRV list = lists.get(position);
+        holder.NewList.setText(list.getNewList());
+    }
+
+
 
 
 }

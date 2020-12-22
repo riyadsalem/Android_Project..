@@ -10,7 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.Adapters.ListAdapter;
 import com.example.myapplication.model.List;
+import com.example.myapplication.model.ListItemRV;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -21,23 +23,26 @@ public class Lists extends AppCompatActivity {
 
     DatabaseReference reff;
     List list;
-    RecyclerView list_rv;
-    com.example.myapplication.Adapters.ListAdapter listAdapter;
-    static ArrayList<List> arrayList = new ArrayList<>();
-
-
+    //......................................
+    RecyclerView list_RV ;
+    ListAdapter listAdapter ;
+    static java.util.List<ListItemRV> listList_RV = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lists);
 
-        list_rv = findViewById(R.id.lists_rv);
-        list_rv.setLayoutManager(new LinearLayoutManager(this));
-        listAdapter = new com.example.myapplication.Adapters.ListAdapter(this ,arrayList );
-        list_rv.setAdapter(listAdapter);
+        list_RV = findViewById(R.id.lists_rv);
 
+        listList_RV.add(new ListItemRV("Coding"));
+        listList_RV.add(new ListItemRV("Maintenance"));
 
+        list_RV.setLayoutManager(new LinearLayoutManager(this));
+        listAdapter = new ListAdapter(this , (ArrayList<ListItemRV>) listList_RV);
+        list_RV.setAdapter(listAdapter);
+
+//..........................................................................................
         list =new List();
         reff = FirebaseDatabase.getInstance().getReference().child("List");
     }

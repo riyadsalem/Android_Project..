@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
 <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -20,6 +15,7 @@
         android:paddingStart="24dp"
         android:text="Home"
         android:layout_marginBottom="30dp"
+        android:padding="10dp"
         android:textColor="#000"
         android:background="@drawable/circularborders"
         android:textSize="16sp"
@@ -33,6 +29,7 @@
         android:layout_alignBottom="@+id/txtNewList"
         android:paddingEnd="26dp"
         android:text="3 tasks"
+        android:padding="10dp"
         android:textColor="#000"
         android:background="@drawable/circularborders"
         android:textSize="16sp"
@@ -41,4 +38,3 @@
 </RelativeLayout>
 
 
-</LinearLayout>
