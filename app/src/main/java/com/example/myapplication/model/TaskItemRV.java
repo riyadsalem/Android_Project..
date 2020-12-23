@@ -12,7 +12,9 @@ public class TaskItemRV {
         this.isChecked = isChecked;
     }
 
-    public String getTitle() { return Title; }
+    public String getTitle() {
+        return Title;
+    }
 
     public void setTitle(String title) {
         Title = title;
@@ -22,7 +24,7 @@ public class TaskItemRV {
         return isChecked;
     }
 
-    public void setIsChecked(Boolean isChecked) {
-        this.isChecked = isChecked;
+    public void setIsChecked(Boolean checked) {
+        isChecked = checked;
     }
 }

@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,9 +26,12 @@ public class Tasks extends AppCompatActivity {
         setContentView(R.layout.activity_tasks);
 
 
-        tasksList_RV.add(new TaskItemRV("Reade",false));
-        tasksList_RV.add(new TaskItemRV("pop",true));
-        tasksList_RV.add(new TaskItemRV("Push",true));
+        String taskName = getIntent().getStringExtra("taskName");
+        String taskDate = getIntent().getStringExtra("taskDate");
+        String taskDescription = getIntent().getStringExtra("taskDescription");
+
+
+        tasksList_RV.add(new TaskItemRV(taskName,false));
 
 
         tasks_RV = findViewById(R.id.tasks_rv);
@@ -51,7 +55,10 @@ public class Tasks extends AppCompatActivity {
     }
 
     public void CreateNewTask(View view) {
+
+        EditText txtCreateNTs = findViewById(R.id.txtCreateNTs);
         Intent intent = new Intent(getApplicationContext(), AddTask.class);
+        intent.putExtra("createNewTask",txtCreateNTs.getText().toString());
         startActivity(intent);
     }
 }

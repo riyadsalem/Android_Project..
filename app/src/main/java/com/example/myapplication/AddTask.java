@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ public class AddTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
+
         edtTaskNameAT =(EditText) findViewById(R.id.edtTaskNameAT);
         edtDateAT = (EditText)findViewById(R.id.edtDateAT);
         edtDescriptionAT =(EditText) findViewById(R.id.edtDescriptionAT);
@@ -31,6 +33,9 @@ public class AddTask extends AppCompatActivity {
         task=new Task();
 
         reff = FirebaseDatabase.getInstance().getReference().child("Task");
+
+        String createNewTask = getIntent().getStringExtra("createNewTask");
+        edtTaskNameAT.setText(createNewTask);
 
         addTask.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,9 +48,13 @@ public class AddTask extends AppCompatActivity {
                 task.setDescription(description);
                 reff.push().setValue(task);
                 Toast.makeText(AddTask.this, "Data CREATE Successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), Tasks.class);
+                intent.putExtra("taskName",edtTaskNameAT.getText().toString());
+                intent.putExtra("taskDate",edtDateAT.getText().toString());
+                intent.putExtra("taskDescription",edtDescriptionAT.getText().toString());
+                startActivity(intent);
             }
         });
-
 
 
     }
