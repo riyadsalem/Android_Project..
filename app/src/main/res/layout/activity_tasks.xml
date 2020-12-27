@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:text="Lists ToDo"
+        android:text="Things ToDo"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         />
@@ -74,8 +74,10 @@
         android:textSize="16sp"
         android:textColor="#B2B2B2"
         android:paddingTop="8dp"
-        android:onClick="DeleteTask"
         />
+    <!--  android:onClick="DeleteTask" -->
+
+
 
     <EditText
         android:id="@+id/txtCreateNTs"
@@ -105,8 +107,9 @@
         android:background="#8357DC"
         android:paddingRight="8dp"
         android:paddingStart="10dp"
-        android:onClick="CreateNewTask"
         />
+    <!--  android:onClick="CreateNewTask"  -->
+
 
 
   <!--  <ListView

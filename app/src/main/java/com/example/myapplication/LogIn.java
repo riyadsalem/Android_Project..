@@ -36,12 +36,15 @@ public class LogIn extends AppCompatActivity {
         pass = findViewById(R.id.edtPassLogin);
 
         firAuth = FirebaseAuth.getInstance();
+
         FirebaseUser user = firAuth.getCurrentUser();
         if (user!=null)
        {
             Intent intent = new Intent(LogIn.this , Lists.class);
             startActivity(intent);
         }
+
+
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please Wait... ");

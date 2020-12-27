@@ -15,10 +15,24 @@
             android:textColor="#000"
             android:padding="10dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
             android:background="@drawable/circularborders"
             android:textSize="16sp"
             />
+        <TextView
+            android:id="@+id/txtEditTs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/checkboxTVC"
+            android:layout_alignRight="@+id/checkboxTVC"
+            android:text="Edit"
+            android:padding="10dp"
+            android:paddingEnd="18dp"
+            android:textColor="#000"
+            android:background="@drawable/circularborders"
+            android:textSize="16sp"
+            />
+
+
 
 
 </RelativeLayout>

@@ -17,6 +17,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @SuppressWarnings("ALL")
@@ -42,12 +46,14 @@ public class SignUp extends AppCompatActivity {
 
         firAuth = FirebaseAuth.getInstance();
 
-              FirebaseUser user = firAuth.getCurrentUser();
+           FirebaseUser user = firAuth.getCurrentUser();
       if ( user !=null)
        {
            Intent intent = new Intent(SignUp.this , Lists.class);
            startActivity(intent);
        }
+
+
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please Wait... ");
@@ -86,6 +92,15 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    FirebaseUser user = firAuth.getCurrentUser();
+                    String uid = user.getUid();
+
+                    Map<String,Object> data = new HashMap<>(); // بخزن بنفس الشكل الي موجود بداخل ال database
+                    data.put("uid",uid);
+                    FirebaseDatabase.getInstance().getReference("Users").child(uid).setValue(data);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                     progressDialog.hide();
                     Toast.makeText(SignUp.this , "Successfully signUp", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), Lists.class);
@@ -100,10 +115,13 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
-
     public void GoToLogIN(View view) {
-        startActivity( new Intent(getApplicationContext(),LogIn.class));
+        Intent intent = new Intent(getApplicationContext(), LogIn.class);
+        startActivity(intent);
     }
+
+
+
 
 
 

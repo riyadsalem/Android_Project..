@@ -20,7 +20,7 @@
             android:layout_marginBottom="34dp"
             android:background="@drawable/circularborders"
             android:text="Meeting with client"
-            android:textSize="12sp"
+            android:textSize="16sp"
 
             />
 
