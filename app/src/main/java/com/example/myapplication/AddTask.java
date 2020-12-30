@@ -22,12 +22,14 @@ public class AddTask extends AppCompatActivity {
   //  DatabaseReference reff;
   //  TaskItemRV taskItemRV;
     FirebaseAuth mAuth;
+   // Tasks tasks;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
+
 
         edtTaskNameAT = (EditText) findViewById(R.id.edtTaskNameAT);
         edtDateAT = (EditText) findViewById(R.id.edtDateAT);
@@ -60,17 +62,20 @@ public class AddTask extends AppCompatActivity {
                 intent.putExtra("taskDate",edtDateAT.getText().toString());
                 intent.putExtra("taskDescription",edtDescriptionAT.getText().toString());
                 startActivity(intent);
-
-
  */
+
+
+
+
         addTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String titleTask = getIntent().getStringExtra("titleTask");
                 String idForTask = getIntent().getStringExtra("idForTask");
+             //   String ListId = getIntent().getStringExtra("ListId");
 
-        mAuth = FirebaseAuth.getInstance();
+                mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
 
@@ -79,7 +84,9 @@ public class AddTask extends AppCompatActivity {
         newTask.setTitle(titleTask);
         newTask.setDate(edtDateAT.getText().toString());
         newTask.setDescription(edtDescriptionAT.getText().toString());
-      //  newTask.setIdTask(taskId);
+       // String listId=FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").push().getKey();
+
+                //  newTask.setIdTask(taskId);
         FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").child("Tasks").child(idForTask).setValue(newTask);
         Toast.makeText(AddTask.this, "task has been added successfully", Toast.LENGTH_SHORT).show();
         edtTaskNameAT.setText(" ");
@@ -113,7 +120,7 @@ public class AddTask extends AppCompatActivity {
                 newTask.setDate(edtDateAT.getText().toString());
                 newTask.setDescription(edtDescriptionAT.getText().toString());
                 FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").child("Tasks").child(idForTask).setValue(newTask);
-                Toast.makeText(AddTask.this, "task has been added successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddTask.this, "task has been edit successfully", Toast.LENGTH_SHORT).show();
                 edtTaskNameAT.setText(" ");
                 edtDateAT.setText(" ");
                 edtDescriptionAT.setText(" ");
@@ -138,9 +145,16 @@ public class AddTask extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 String uid = user.getUid();
                 FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").child("Tasks").child(idForTask).removeValue();
+                Toast.makeText(AddTask.this, "task has been delete successfully", Toast.LENGTH_SHORT).show();
+
                 edtTaskNameAT.setText(" ");
                 edtDateAT.setText(" ");
                 edtDescriptionAT.setText(" ");
+                /*
+                Intent intent = new Intent(getApplicationContext(), Tasks.class);
+                startActivity(intent);
+
+                 */
 
             }
         });
@@ -155,7 +169,6 @@ public class AddTask extends AppCompatActivity {
         });
 
  */
-
 
 
 }

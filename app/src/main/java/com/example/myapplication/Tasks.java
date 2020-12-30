@@ -1,4 +1,5 @@
 package com.example.myapplication;
+//////////////////////////////////  complete   //////////////////////////////////
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -37,12 +38,14 @@ public class Tasks extends AppCompatActivity {
     ImageButton btnCNTs ;
     EditText txtCreateNTs;
     TextView txtDeleteTS;
+   // Tasks tasks = null;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
+      // tasks = this;
 
         TextView txtTitle2Ts = findViewById(R.id.txtTitle2Ts);
         txtTitle2Ts.setText(getIntent().getStringExtra("taskName")+" "+"List");
@@ -50,6 +53,9 @@ public class Tasks extends AppCompatActivity {
          btnCNTs = findViewById(R.id.btnCNTs);
          txtCreateNTs = findViewById(R.id.txtCreateNTs);
         txtDeleteTS =findViewById(R.id.txtDeleteTS);
+      TextView  txtEditTs =findViewById(R.id.txtEditTs);
+
+
 
         //  String taskName = getIntent().getStringExtra("taskName");
        // tasksList_RV.add(new TaskItemRV(taskName,false));
@@ -110,6 +116,10 @@ public class Tasks extends AppCompatActivity {
                 String uid = user.getUid();
                 String taskListId = getIntent().getStringExtra("taskId");
                 FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").child(taskListId).removeValue();
+                Toast.makeText(Tasks.this,"task has been delete successfully", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(), Lists.class);
+                startActivity(intent);
             }
 
         });
@@ -145,5 +155,14 @@ public class Tasks extends AppCompatActivity {
         startActivity(intent);
     }
      */
+/*
+    public void intent(){
+        String listTaskAddTask = getIntent().getStringExtra("taskId");
+        Intent intent = new Intent(getApplicationContext(), AddTask.class);
+        intent.putExtra("listTaskAddTask",listTaskAddTask);
+        startActivity(intent);
+    }
+    }
+ */
 
 }

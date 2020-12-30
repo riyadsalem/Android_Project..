@@ -1,4 +1,6 @@
 package com.example.myapplication.Adapters;
+//////////////////////////////////  complete   //////////////////////////////////
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
@@ -23,6 +25,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh> {
 
     Context context;
     List<TaskItemRV> tasks ;
+  //  List<ListItemRV> lists ;
    // FirebaseAuth mAuth;
  //   Tasks bigTasks;
 
@@ -61,7 +64,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final TaskVh holder, int position) {
+    public void onBindViewHolder(@NonNull final TaskVh holder, final int position) {
         holder.setData(tasks.get(position));  /////////////////////
         final TaskItemRV taskEntity = tasks.get(position);
         if(taskEntity.getIsChecked() ){
@@ -91,6 +94,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh> {
                 if(isChecked){
                     holder.checkBox.setText(taskEntity.getTitle());
                     holder.checkBox.setPaintFlags( holder.checkBox.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+
                 }else {
                     holder.checkBox.setText(taskEntity.getTitle());
                     holder.checkBox.setPaintFlags( holder.checkBox.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
@@ -107,6 +111,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh> {
                 Intent intent = new Intent(context, AddTask.class);
                 intent.putExtra("titleTask",taskEntity.getTitle());
                 intent.putExtra("idForTask",taskEntity.getIdTask());
+               // intent.putExtra("idForListToTaskToAdd", (Serializable) lists.get(position));
                 context.startActivity(intent);
             }
         });

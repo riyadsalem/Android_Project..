@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/main_background"
     android:paddingTop="12dp"
+
     tools:context=".AddTask">
 
     <TextView
@@ -17,7 +19,7 @@
         android:textAlignment="center"
         android:text="View Task"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="22sp"
         />
     <TextView
         android:id="@+id/txtBackToLists"
@@ -38,7 +40,7 @@
         android:layout_marginEnd="16dp"
         android:textColor="#FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:text="Edit"
         android:layout_alignBottom="@+id/txtTitle1AT"
         />
@@ -50,8 +52,8 @@
         android:layout_marginTop="60dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-
-        >
+        card_view:cardCornerRadius="36dp"
+       >
 
         <RelativeLayout
             android:layout_width="match_parent"
