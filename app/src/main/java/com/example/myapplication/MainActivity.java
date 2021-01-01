@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void TOLOGIN(View view) {
-        Intent intent = new Intent(getApplicationContext(), LogIn.class);
+        Intent intent = new Intent(getApplicationContext(), SignUp.class);
         startActivity(intent);
     }
 

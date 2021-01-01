@@ -113,6 +113,7 @@
         android:layout_marginTop="34dp"
         android:paddingBottom="6dp"
         android:paddingTop="6dp"
+        android:maxLines="1"
         android:hint="Create new list here"
         android:textColorHint="#FFFFFF"
         android:background="#8357DC"

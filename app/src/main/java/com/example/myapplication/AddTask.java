@@ -1,4 +1,5 @@
 package com.example.myapplication;
+//////////////////////////////////  ##complete   //////////////////////////////////
 
 import android.os.Bundle;
 import android.view.View;
@@ -15,9 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AddTask extends AppCompatActivity {
     EditText edtTaskNameAT,edtDateAT,edtDescriptionAT;
-    TextView addTask;
-    TextView txtEdit;
-    TextView deleteTask;
+    TextView addTask , txtEdit , txtBackToLists , txtSecName , deleteTask ;
     // TextView txtBackToLists;
   //  DatabaseReference reff;
   //  TaskItemRV taskItemRV;
@@ -36,12 +35,15 @@ public class AddTask extends AppCompatActivity {
         edtDescriptionAT = (EditText) findViewById(R.id.edtDescriptionAT);
         addTask = (TextView) findViewById(R.id.addTask);
         txtEdit = (TextView) findViewById(R.id.txtEdit);
+        txtSecName = (TextView) findViewById(R.id.txtSecName);
+        txtBackToLists = (TextView) findViewById(R.id.txtBackToLists);
         deleteTask = (TextView) findViewById(R.id.deleteTask);
      //   txtBackToLists = (TextView) findViewById(R.id.txtBackToLists);
 
         String titleTask = getIntent().getStringExtra("titleTask");
       //  String idForTask = getIntent().getStringExtra("idForTask");
         edtTaskNameAT.setText(titleTask);
+        txtSecName.setText(titleTask);
 
         // reff = FirebaseDatabase.getInstance().getReference().child("Task");
 /*
@@ -63,8 +65,17 @@ public class AddTask extends AppCompatActivity {
                 intent.putExtra("taskDescription",edtDescriptionAT.getText().toString());
                 startActivity(intent);
  */
+/*
+/////////////////// because found back bottom in the mobile //////////////////////////////////
+        txtBackToLists.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             Intent intent = new Intent(getApplicationContext(), lists.class); // lists.class or Tasks.class
+             startActivity(intent);
+            }
+        });
 
-
+ */
 
 
         addTask.setOnClickListener(new View.OnClickListener() {

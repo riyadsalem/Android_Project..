@@ -3,6 +3,7 @@ package com.example.myapplication.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,6 +29,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh> {
   //  List<ListItemRV> lists ;
    // FirebaseAuth mAuth;
  //   Tasks bigTasks;
+  // RelativeLayout relativelayouttest;
 
     public TaskAdapter(Context context,List <TaskItemRV> tasks) {
         this.context = context;
@@ -42,12 +44,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh> {
         CheckBox checkBox;
      //   TextView txtDeleteTS;
         TextView txtEditTs;
+      //  RelativeLayout relativelayouttest;
 
         public TaskVh(@NonNull View view) {
             super(view);
             checkBox = itemView.findViewById(R.id.checkboxTVC);
         //    txtDeleteTS = itemView.findViewById(R.id.txtDeleteTS);
             txtEditTs = itemView.findViewById(R.id.txtEditTs);
+      //      relativelayouttest = itemView.findViewById(R.id.relativelayouttest);
         }
 
         public void setData(final TaskItemRV task) {
@@ -67,8 +71,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh> {
     public void onBindViewHolder(@NonNull final TaskVh holder, final int position) {
         holder.setData(tasks.get(position));  /////////////////////
         final TaskItemRV taskEntity = tasks.get(position);
-        if(taskEntity.getIsChecked() ){
+        if(taskEntity.getIsChecked()){
             holder.checkBox.setChecked(true);
+           // holder.checkBox.setTextColor(Color.WHITE);
+            // holder.checkBox.cancelLongPress();
             holder.checkBox.setPaintFlags( holder.checkBox.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
        // holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -93,10 +99,15 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh> {
                 holder.checkBox.setSelected(isChecked);
                 if(isChecked){
                     holder.checkBox.setText(taskEntity.getTitle());
+                    holder.checkBox.setTextColor(Color.WHITE);
+                //    holder.txtEditTs.setTextColor(Color.WHITE); ******
+                 // relativelayouttest.removeAllViews();
+                   // holder.checkBox.onCancelPendingInputEvents();
                     holder.checkBox.setPaintFlags( holder.checkBox.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
                 }else {
                     holder.checkBox.setText(taskEntity.getTitle());
+                //    holder.txtEditTs.setTextColor(Color.BLACK);
                     holder.checkBox.setPaintFlags( holder.checkBox.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
                 }
 

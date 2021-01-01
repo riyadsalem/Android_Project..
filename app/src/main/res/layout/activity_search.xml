@@ -49,6 +49,7 @@
         android:paddingBottom="6dp"
         android:paddingTop="6dp"
         android:hint="Search"
+        android:maxLines="1"
         android:textSize="18sp"
         android:textColorHint="#FFFFFF"
         android:background="#8357DC"

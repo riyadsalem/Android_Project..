@@ -47,7 +47,18 @@ public class Lists extends AppCompatActivity {
      //   listList_RV.add(new ListItemRV("Coding"));
       //  listList_RV.add(new ListItemRV("Maintenance"));
 
-       // get list //
+
+
+        txtBackToLoginLs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // get list //
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
@@ -104,15 +115,6 @@ public class Lists extends AppCompatActivity {
         Toast.makeText(Lists.this,"task has been added successfully", Toast.LENGTH_SHORT).show();
         edtCreateNLs.setText(" ");
 
-
-        txtBackToLoginLs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Lists.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
     public void GoToSearch(View view) {
@@ -122,8 +124,8 @@ public class Lists extends AppCompatActivity {
 
     public void LogOut(View view) {
         FirebaseAuth.getInstance().signOut();
-        Toast.makeText(Lists.this,"signed out", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(Lists.this, LogIn.class);
+        Toast.makeText(Lists.this,"logIn out", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Lists.this, MainActivity.class);
         startActivity(intent);
     }
 
